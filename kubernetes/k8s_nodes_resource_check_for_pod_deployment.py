@@ -90,7 +90,7 @@ def Main():
         print("Run %s --help to know the usage." %ScriptName)
         sys.exit(1)
 
-    Usage = "%s [-e] [-r] [-c] [-d" % ScriptName
+    Usage = "%s [-k] [-c] [-m] [-r]" % ScriptName
     o = OptionParser(usage = Usage, add_help_option=True)
     o.add_option('--kubeconfig', '-k', metavar='Kubeconfig Filename with absolute path', help="Kubeconfig File with Path")
     o.add_option('--cpu', '-c', metavar='Integer Value ending with millicpu(Example - 100m)', help="Required CPU resource for the POD")
