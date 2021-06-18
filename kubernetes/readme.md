@@ -17,7 +17,7 @@ pip install kubernetes
 
 $ python3 k8s_nodes_resource_check_for_pod_deployment.py \--help
 
-Usage: k8s_nodes_resource_check_for_pod_deployment.py [\-e] [\-r] [\-c] [\-d]
+Usage: k8s_nodes_resource_check_for_pod_deployment.py [\-k] [\-c] [\-m] [\-r]
 
 Options:
 
