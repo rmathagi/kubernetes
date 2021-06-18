@@ -39,8 +39,10 @@ Options:
 Example Usage:
 
 $ python3 k8s_nodes_resource_check_for_pod_deployment.py -k /home/rmathagi/.kube/kubeconfig-aws-preprod -c 5000m -m 2048Mi -r 2
+
 2 Worker Nodes are eligible for Scheduling this POD(with replicas)
 
 
 $ python3 k8s_nodes_resource_check_for_pod_deployment.py -k /home/rmathagi/.kube/kubeconfig-aws-preprod -c 5000m -m 2048Mi -r 2
+
 Error: Inadequate resources - Only 0 Worker Nodes are available for Scheduling this POD(with replicas)
