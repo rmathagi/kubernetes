@@ -15,18 +15,24 @@ pip install kubernetes
 
 ## USAGE
 
-$ python3 k8s_nodes_resource_check_for_pod_deployment.py --help
-Usage: k8s_nodes_resource_check_for_pod_deployment.py [-e] [-r] [-c] [-d
+$ python3 k8s_nodes_resource_check_for_pod_deployment.py \--help
+
+Usage: k8s_nodes_resource_check_for_pod_deployment.py [\-e] [\-r] [\-c] [\-d]
 
 Options:
-  -h, --help            show this help message and exit
-  -k Kubeconfig Filename with absolute path, --kubeconfig=Kubeconfig Filename with absolute path
+
+  \--help            show this help message and exit
+
+  \--kubeconfig=Kubeconfig Filename with absolute path
                         Kubeconfig File with Path
-  -c Integer Value ending with millicpu(Example - 100m), --cpu=Integer Value ending with millicpu(Example - 100m)
+                        
+  \--cpu=Integer Value ending with millicpu(Example - 100m)
                         Required CPU resource for the POD
-  -m Integer Value ending with Mi(Example - 1Mi), --memory=Integer Value ending with Mi(Example - 1Mi)
+                        
+  \--memory=Integer Value ending with Mi(Example - 1Mi)
                         Required Memory resource for POD
-  -r Integer Value, --replicas=Integer Value
+                        
+  \--replicas=Integer Value
                         Number of replicas to be deployed
 
 
