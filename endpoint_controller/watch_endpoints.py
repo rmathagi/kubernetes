@@ -62,7 +62,7 @@ def Main():
     v1 = client.CoreV1Api()
     v2 = client.AppsV1Api()
     Resource_Version_All=[]
-    logging.info("Container initiated to monitor DB End Points..!!")
+    logging.info("Container initiated to monitor End Points..!!")
     # This will handle exceptions arising due to watch timeout.
     while True:
         try:
