@@ -1,5 +1,5 @@
 ## PURPOSE
-Used to check if the POD(with replicas) can be deployed in Kubernetes cluster.
+Used to check if the POD(with replicas) can be deployed in Kubernetes cluster. Also, addresses the limitation in K8s API's to provide resource metrics using one single API call. 
 
 ## DESCRIPTION
 

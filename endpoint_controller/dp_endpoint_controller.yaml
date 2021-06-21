@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: endpoint_controller
+  name: endpoint_controller
+  namespace: admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: endpoint_controller
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: endpoint_controller
+    spec:
+      containers:
+      - image: <repository>/endpoint_controller:0.2
+        imagePullPolicy: Always
+        name: endpoint_controller
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1800Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
+        volumeMounts:
+        - mountPath: /srv/runtime
+          name: xds
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      imagePullSecrets:
+      - name: <secret>
+      - name: artifactory5000
+      - name: artifactory10000
+      nodeSelector:
+        endpoint_controller: "yes"
+      restartPolicy: Always
+      serviceAccount: endpoint_controller
+      serviceAccountName: endpoint_controller
+      volumes:
+      - emptyDir: {}
+        name: xds
