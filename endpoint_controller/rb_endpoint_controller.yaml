@@ -1,0 +1,39 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: endpoint_controller
+  namespace: admin
+  labels:
+    name: endpoint_controller
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: endpoint_controller
+  labels:
+    name: endpoint_controller
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - services
+  - configmaps
+  - endpoints
+  verbs:
+    - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: endpoint_controller
+  labels:
+    name: endpoint_controller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: endpoint_controller
+subjects:
+- kind: ServiceAccount
+  name: endpoint_controller
+  namespace: admin
